@@ -1,0 +1,214 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+
+        scroll-behavior: smooth;
+
+}
+
+:root {
+    --bg-dark: #0a0b10;
+    --primary-color: #5c15eb; /* morado  */
+    --accent-color: #f1c40f;  /*amarillo  */
+    --text-white: #ffffff;
+    --text-gray: #b0b3c1;
+}
+
+
+
+body{
+
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    line-height: 1.6;
+    background: radial-gradient(circle at 50% 40%, #2a0e4a 0%, #07080c 70%); /*Color del fondo de la pagina*/
+    animation: fadeIn 1s ease-in-out;
+
+}
+
+.navegacion_container {
+   background-color: rgba(10,11,16,0.8);
+   backdrop-filter: blur(10px);
+   position: sticky;
+   top: 0;
+   z-index: 1000; 
+   padding: 20px 0;
+   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+a {
+
+    color: var(--text-gray);
+    text-decoration: none;
+    font-weight: 400;
+    text-transform: capitalize;
+    transition: color 0.3s ease;
+
+}
+
+a:hover {
+    color: var(--text-white);
+}
+
+.logo {
+
+     max-width: 400px; 
+    height: auto;
+}
+
+.logo_container {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.logo_container h3{
+    font: 300;
+    color: var(--text-gray);
+    letter-spacing: 1px;
+
+}
+
+.datos {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    gap: 20px;
+    border-radius: 10px;
+}
+
+.servicios_grid  {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Preguntar esto */
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 40px;
+}
+
+article {
+    background-color: rgba(255, 255, 255, 0.03); 
+    padding: 30px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+article:hover{
+
+    transform: translateY(-10px); /* Preguntar esto */
+    background-color: rgba(92, 21, 235, 0.1); 
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+}
+
+article img {
+    width: 100px;
+}
+
+article:hover img {
+    transform: scale(1.1) rotate(5deg); 
+    filter: drop-shadow(0 0 8px var(--primary-color)); 
+    transition: 0.3s ease;
+}
+
+.quienes_somos {
+
+    background: linear-gradient(45deg,  #5c15eb, #130020);
+
+}
+
+.iconos_redes {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    align-items: center;
+
+}
+
+.social_media_container img {
+    width: 30px;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.social_media_container img:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+    cursor: pointer;
+}
+
+
+footer {
+    color: white;
+    text-align: center;
+}
+
+.btn-secundario {
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: var(--text-white);
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+
+}
+
+.btn-secundario:hover {
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    border: 2px solid white;
+    box-shadow: 0 5px 15px rgba(92, 21, 235, 0.3);
+}
+
+.what-icon {
+   transition: transform 0.3s ease;
+   cursor: pointer;
+}
+
+.what-icon:hover {
+    transform: scale(1.1) rotate(5deg); 
+}
+
+@keyframes fadeIn {
+
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+
+}
+
+@media (max-width: 700px) {
+    .servicios_grid {
+        grid-template-columns: 1fr; 
+    }
+}
