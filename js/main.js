@@ -1,27 +1,29 @@
+  
+  // Para el efecto de borde al hacer click en los enlaces de navegación en el index.html
   document.addEventListener('click', (event) => {
-    // 1. Verificamos si es un link de navegación
+   
     if (event.target.classList.contains('nav-link')) {
         
-        // 2. Obtenemos el ID del href (quitándole el #)
+        
         const idSeccion = event.target.getAttribute('href').replace('#', '');
         const seccion = document.getElementById(idSeccion);
 
-        // 3. Si la sección existe, aplicamos el efecto
+  
         if (seccion) {
             seccion.style.transition = 'border 0.3s ease-in-out';
             seccion.style.border = '2px solid white';
 
-            // 4. Quitamos el borde después de 1 segundo
+          
             setTimeout(() => {
                 seccion.style.border = '2px solid transparent'; 
-                // Usamos transparent en lugar de 'none' para que la caja no "brinque"
+               
             }, 1000);
         }
     } 
 });
 
 
-// Para la parte de contacto
+//para copiar el numero de contacto al portapapeles en el contacto.html
 const btnCopiar = document.getElementById('btn_copiar');
 const numero = document.getElementById('numero_copy').innerText;
 
